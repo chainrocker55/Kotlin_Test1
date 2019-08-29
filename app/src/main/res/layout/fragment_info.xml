@@ -14,8 +14,8 @@
             android:id="@+id/txtInfo"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginTop="70dp"
-            android:text="Info"
+            android:layout_marginTop="30dp"
+            android:text="@string/info"
             android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -26,14 +26,15 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="188dp"
-            android:layout_height="209dp"
-            android:layout_marginTop="52dp"
+            android:layout_width="276dp"
+            android:layout_height="273dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/chainrocker"
+            android:src="@drawable/profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtInfo"
-            tools:src="@tools:sample/avatars[0]" />
+            app:layout_constraintTop_toBottomOf="@+id/txtInfo" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,7 +44,7 @@ class LoginFragment : Fragment() {
         binding.apply {
             val usernameValue:String = binding.username.text.toString()
             val passwordValue:String = binding.password.text.toString()
-            if (usernameValue.equals("admin")&&passwordValue.equals("admin")){
+            if (usernameValue.equals("admin")&&passwordValue.equals("password")){
                 userNotMatch.visibility = View.GONE
                 view.findNavController().navigate(R.id.action_loginFragment_to_parkCarFragment)
             }else{
