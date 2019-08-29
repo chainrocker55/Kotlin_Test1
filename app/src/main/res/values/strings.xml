@@ -5,4 +5,11 @@
     <string name="placeholderName">Name</string>
     <string name="empty">Empty</string>
     <string name="select"><b>Select Park: </b></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="userNotMatch">username of password is not match!!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
 </resources>
