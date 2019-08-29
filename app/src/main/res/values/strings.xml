@@ -3,4 +3,6 @@
     <string name="placeholderNumber">Number</string>
     <string name="placeholderModel">Model</string>
     <string name="placeholderName">Name</string>
+    <string name="empty">Empty</string>
+    <string name="select"><b>Select Park: </b></string>
 </resources>
