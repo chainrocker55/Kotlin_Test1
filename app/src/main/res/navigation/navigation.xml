@@ -12,6 +12,10 @@
             android:id="@+id/action_loginFragment_to_parkCarFragment"
             app:destination="@id/parkCarFragment"
             app:popUpTo="@+id/parkCarFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_infoFragment2"
+            app:destination="@id/infoFragment"
+            app:popUpTo="@+id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/parkCarFragment"
@@ -20,7 +24,8 @@
         <action
             android:id="@+id/action_parkCarFragment_to_infoFragment"
             app:destination="@id/infoFragment"
-            app:popUpTo="@+id/parkCarFragment" />
+            app:popUpTo="@+id/parkCarFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/infoFragment"
