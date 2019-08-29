@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <data>
+        <variable name="car" type="buu.informatics.s59160545.parking.ParkCar"/>
+        <variable name="cars" type="buu.informatics.s59160545.parking.ParkCar[]"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/margin_start"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/carone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+            android:text="@{cars[0].empty?@string/empty:``+cars[0].number}"
+            android:background="@{cars[0].empty?@color/empty:@color/notEmpty}"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toStartOf="@+id/cartwo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cartwo" />
+
+
+        <Button
+            android:id="@+id/cartwo"
+            android:text="@{cars[1].empty?@string/empty:``+cars[1].number}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@{cars[1].empty?@color/empty:@color/notEmpty}"
+            android:padding="@dimen/padding"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toStartOf="@+id/cartree"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/carone"
+            app:layout_constraintTop_toTopOf="@+id/cartree" />
+
+        <Button
+            android:id="@+id/cartree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@{cars[2].empty?@color/empty:@color/notEmpty}"
+            android:padding="@dimen/padding"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size"
+            android:text="@{cars[2].empty?@string/empty:``+cars[2].number}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cartwo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/green"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/delete"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/holo_red_dark"
+            android:text="Delete"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/save"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <EditText
+            android:id="@+id/number"
+            android:text="@={car.number}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:freezesText="false"
+            android:hint="@string/placeholderNumber"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selected" />
+
+        <EditText
+            android:id="@+id/model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/placeholderModel"
+            android:text="@={car.model}"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/number" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@={car.name}"
+            android:ems="10"
+            android:hint="@string/placeholderName"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/model" />
+
+        <TextView
+            android:id="@+id/selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@{`Select Park: `+car.id}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
