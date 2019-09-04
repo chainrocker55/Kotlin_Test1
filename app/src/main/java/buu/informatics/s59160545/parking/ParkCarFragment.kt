@@ -1,8 +1,11 @@
 package buu.informatics.s59160545.parking
 
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.view.*
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -22,9 +25,11 @@ class ParkCarFragment : Fragment() {
     private  var flagCar = 0
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
         binding = DataBindingUtil.inflate<FragmentParkCarBinding>(inflater,R.layout.fragment_park_car,container,false)
         binding.apply {
             cars = this@ParkCarFragment.park
+            car = park?.get(flagCar)
             carone.setOnClickListener {
                 SelectPark(it)
             }
@@ -41,6 +46,7 @@ class ParkCarFragment : Fragment() {
                 Save(it)
             }
         }
+
         setHasOptionsMenu(true)
         return  binding.root
     }
@@ -75,12 +81,22 @@ class ParkCarFragment : Fragment() {
         car.number = ""
         car.model = ""
         car.name = ""
+        hideKeyboard(view)
         binding.invalidateAll()
     }
     private  fun Save(view:View){
         val car = park?.get(flagCar)
         car.empty = false
+        hideKeyboard(view)
         binding.invalidateAll()
+    }
+    fun Fragment.hideKeyboard(view: View) {
+        activity!!.hideKeyboard(view)
+    }
+
+    fun Context.hideKeyboard(view: View) {
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
 

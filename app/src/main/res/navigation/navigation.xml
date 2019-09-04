@@ -11,7 +11,7 @@
         <action
             android:id="@+id/action_loginFragment_to_parkCarFragment"
             app:destination="@id/parkCarFragment"
-            app:popUpTo="@+id/parkCarFragment" />
+            app:popUpTo="@+id/loginFragment" />
         <action
             android:id="@+id/action_loginFragment_to_infoFragment2"
             app:destination="@id/infoFragment"
