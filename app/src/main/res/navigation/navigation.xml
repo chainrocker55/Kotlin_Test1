@@ -12,22 +12,24 @@
             android:id="@+id/action_loginFragment_to_parkCarFragment"
             app:destination="@id/parkCarFragment"
             app:popUpTo="@+id/loginFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_infoFragment2"
-            app:destination="@id/infoFragment"
-            app:popUpTo="@+id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/parkCarFragment"
         android:name="buu.informatics.s59160545.parking.ParkCarFragment"
         android:label="Manage Car">
         <action
-            android:id="@+id/action_parkCarFragment_to_infoFragment"
+            android:id="@+id/action_parkCarFragment_to_infoFragment2"
             app:destination="@id/infoFragment"
-            app:popUpTo="@+id/parkCarFragment" />
+            app:popUpTo="@+id/parkCarFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/infoFragment"
         android:name="buu.informatics.s59160545.parking.InfoFragment"
-        android:label="Profile" />
+        android:label="Profile" >
+        <action
+            android:id="@+id/action_infoFragment_to_parkCarFragment2"
+            app:destination="@id/parkCarFragment"
+            app:popUpTo="@+id/parkCarFragment" />
+    </fragment>
 </navigation>
